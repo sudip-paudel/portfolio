@@ -1,7 +1,7 @@
 import img from "/img.webp";
 import { motion } from "framer-motion";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/Hi";
+import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import useSectionInView from "../libs/hooks";
 import { HashLink } from "react-router-hash-link";

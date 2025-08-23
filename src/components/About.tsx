@@ -1,9 +1,9 @@
-import SectionHeading from './SectionHeading'
-import { motion } from 'framer-motion'
-import useSectionInView from '../libs/hooks'
+import SectionHeading from "./SectionHeading";
+import { motion } from "framer-motion";
+import useSectionInView from "../libs/hooks";
 
 const About = () => {
-  const { ref } = useSectionInView('About')
+  const { ref } = useSectionInView("About");
 
   return (
     <motion.section
@@ -16,23 +16,26 @@ const About = () => {
     >
       <SectionHeading>About Me</SectionHeading>
       <p className="mb-3 text-justify">
-        As a junior <span className="font-medium"> ReactJS</span> developer, I
-        am committed to delivering innovative solutions that meet and exceed my
-        client expectations.{' '}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. I possess a
-        solid grasp of{' '}
+        As a <span className="font-medium">Frontend Developer</span>, I
+        specialize in building responsive, high-performance applications using{" "}
         <span className="font-medium">
-          ReactJS, Redux, JavaScript, HTML5/CSS3.
-        </span>{' '}
-        I am also familiar with TypeScript. I am always looking to learn new
-        technologies. I am currently looking for a{' '}
-        <span className="font-medium">full-time position</span> as a software
-        developer.
+          React, Next.js, TypeScript, and Angular
+        </span>
+        .
+        <span className="italic">
+          {" "}
+          My favorite part of programming is the problem-solving aspect—I enjoy
+          the challenge of turning complex requirements into elegant, scalable
+          solutions.
+        </span>{" "}
+        I have hands-on experience with{" "}
+        <span className="font-medium">
+          Redux Toolkit, Tailwind CSS, Firebase, and modern UI libraries
+        </span>
+        , with a strong focus on performance and accessibility.
       </p>
     </motion.section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

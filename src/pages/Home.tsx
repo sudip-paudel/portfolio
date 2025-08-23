@@ -1,11 +1,12 @@
-import About from '../components/About'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
-import Intro from '../components/Intro'
-import Projects from '../components/Projects'
-import SectionDivider from '../components/SectionDivider'
-import Skills from '../components/Skills'
-import ThemeSwitch from '../components/ThemeSwitch'
+import About from "../components/About";
+import Contact from "../components/Contact";
+import Experience from "../components/Experience";
+import Footer from "../components/Footer";
+import Intro from "../components/Intro";
+import Projects from "../components/Projects";
+import SectionDivider from "../components/SectionDivider";
+import Skills from "../components/Skills";
+import ThemeSwitch from "../components/ThemeSwitch";
 
 const Page = () => {
   return (
@@ -15,11 +16,12 @@ const Page = () => {
       <About />
       <Projects />
       <Skills />
+      <Experience />
       <Contact />
       <Footer />
       <ThemeSwitch />
     </main>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

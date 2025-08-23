@@ -1,15 +1,15 @@
-import img from '/img.webp'
-import { motion } from 'framer-motion'
-import { BsArrowRight, BsLinkedin } from 'react-icons/bs'
-import { HiDownload } from 'react-icons/Hi'
-import { FaGithubSquare } from 'react-icons/fa'
-import useSectionInView from '../libs/hooks'
-import { HashLink } from 'react-router-hash-link'
-import { useActiveSectionContext } from '../context/active-section-context'
+import img from "/img.webp";
+import { motion } from "framer-motion";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/Hi";
+import { FaGithubSquare } from "react-icons/fa";
+import useSectionInView from "../libs/hooks";
+import { HashLink } from "react-router-hash-link";
+import { useActiveSectionContext } from "../context/active-section-context";
 
 const Intro = () => {
-  const { ref } = useSectionInView('Home', 0.5)
-  const { setActive, setTimeOfLastClick } = useActiveSectionContext()
+  const { ref } = useSectionInView("Home", 0.5);
+  const { setActive, setTimeOfLastClick } = useActiveSectionContext();
   return (
     <section
       ref={ref}
@@ -21,7 +21,7 @@ const Intro = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: 'tween', duration: 0.2 }}
+            transition={{ type: "tween", duration: 0.2 }}
           >
             <img
               src={img}
@@ -34,7 +34,7 @@ const Intro = () => {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
-              type: 'spring',
+              type: "spring",
               stiffness: 125,
               duration: 0.7,
               delay: 0.1,
@@ -49,11 +49,13 @@ const Intro = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Sudip.</span> I'm a{' '}
-        <span className="font-bold">front-end developer</span> with{' '}
-        <span className="font-bold">1 years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My focus is{' '}
-        <span className="underline">React(Next.js)</span>.
+        <span className="font-bold">Hello, I'm Sudip.</span> I'm a{" "}
+        <span className="font-bold">front-end developer</span> specializing in{" "}
+        <span className="underline">React, Next.js, and Angular</span>, with{" "}
+        <span className="font-bold">1.5 years</span> of experience building{" "}
+        <span className="italic">
+          responsive, performance-driven applications.
+        </span>
       </motion.h1>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium"
@@ -66,11 +68,11 @@ const Intro = () => {
           to="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition-all "
           onClick={() => {
-            setActive('Contact')
-            setTimeOfLastClick(Date.now())
+            setActive("Contact");
+            setTimeOfLastClick(Date.now());
           }}
         >
-          Contact me here{' '}
+          Contact me here{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </HashLink>
         <a
@@ -88,7 +90,7 @@ const Intro = () => {
           <BsLinkedin />
         </a>
         <a
-          href="https://github.com/sudip57"
+          href="https://github.com/sudip-paudel"
           target="_blank"
           className="bg-white p-4 flex text-gray-700 text-[1.25rem] text-gary-700 items-center gap-2 rounded-full hover:text-gray-950 focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition-all cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60"
         >
@@ -96,7 +98,7 @@ const Intro = () => {
         </a>
       </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;

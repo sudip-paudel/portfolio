@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@portabletext/react": "^6.0.3",
+    "@sanity/client": "^7.20.0",
+    "@sanity/image-url": "^2.1.1",
     "@types/react-router-hash-link": "^2.4.6",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.1",

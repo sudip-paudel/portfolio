@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react";
 import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
 import useSectionInView from "../libs/hooks";
+import { client } from "../libs/sanityClient";
+
+const query = `*[_type == "siteConfig"][0] { aboutMe }`;
 
 const About = () => {
   const { ref } = useSectionInView("About");
+  const [aboutMe, setAboutMe] = useState<string | null>(null);
+
+  useEffect(() => {
+    client.fetch<{ aboutMe: string }>(query).then((data) => {
+      if (data?.aboutMe) setAboutMe(data.aboutMe);
+    });
+  }, []);
 
   return (
     <motion.section
@@ -16,23 +27,27 @@ const About = () => {
     >
       <SectionHeading>About Me</SectionHeading>
       <p className="mb-3 text-justify">
-        As a <span className="font-medium">Frontend Developer</span>, I
-        specialize in building responsive, high-performance applications using{" "}
-        <span className="font-medium">
-          React, Next.js, TypeScript, and Angular
-        </span>
-        .
-        <span className="italic">
-          {" "}
-          My favorite part of programming is the problem-solving aspect—I enjoy
-          the challenge of turning complex requirements into elegant, scalable
-          solutions.
-        </span>{" "}
-        I have hands-on experience with{" "}
-        <span className="font-medium">
-          Redux Toolkit, Tailwind CSS, Firebase, and modern UI libraries
-        </span>
-        , with a strong focus on performance and accessibility.
+        {aboutMe ?? (
+          <>
+            As a <span className="font-medium">Frontend Developer</span>, I
+            specialize in building responsive, high-performance applications using{" "}
+            <span className="font-medium">
+              React, Next.js, TypeScript, and Angular
+            </span>
+            .
+            <span className="italic">
+              {" "}
+              My favorite part of programming is the problem-solving aspect—I enjoy
+              the challenge of turning complex requirements into elegant, scalable
+              solutions.
+            </span>{" "}
+            I have hands-on experience with{" "}
+            <span className="font-medium">
+              Redux Toolkit, Tailwind CSS, Firebase, and modern UI libraries
+            </span>
+            , with a strong focus on performance and accessibility.
+          </>
+        )}
       </p>
     </motion.section>
   );

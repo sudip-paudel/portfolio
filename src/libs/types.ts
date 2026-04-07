@@ -1,7 +1,7 @@
 import { links } from './data'
+import type { PortableTextBlock } from '@portabletext/types'
 
-// Matches @portabletext/react's PortableTextBlock shape
-export type PortableTextBlock = Record<string, unknown>
+export type { PortableTextBlock }
 
 export type SectionName = (typeof links)[number]['name']
 

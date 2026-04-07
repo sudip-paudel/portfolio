@@ -77,11 +77,10 @@ const Intro = () => {
           <PortableText
             value={intro}
             components={{
-              block: ({ children }: { children: React.ReactNode }) => <span>{children}</span>,
               marks: {
-                strong: ({ children }: { children: React.ReactNode }) => <span className="font-bold">{children}</span>,
-                em: ({ children }: { children: React.ReactNode }) => <span className="italic">{children}</span>,
-                underline: ({ children }: { children: React.ReactNode }) => <span className="underline">{children}</span>,
+                strong: ({ children }: { children?: React.ReactNode }) => <span className="font-bold">{children}</span>,
+                em: ({ children }: { children?: React.ReactNode }) => <span className="italic">{children}</span>,
+                underline: ({ children }: { children?: React.ReactNode }) => <span className="underline">{children}</span>,
               },
             }}
           />
